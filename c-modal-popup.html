@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal - Pop-up!</title>
+    <link rel="stylesheet" href="./lib/bootstrap.min.css">
+</head>
+<body>
+    <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exemplo-modal">
+        Abri modal
+    </button>
+    <div id="exemplo-modal" class="modal">
+        <div class="modal-dialog">
+            <div class="modal-content"> <!--Divide-se em cabeçalho corpo e rodapé-->
+                <div class="modal-header">
+                    <h5>Título da Modal</h5>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        Esse é um parágrafo de um pop-up. Ele fecha ao clicar fora dele!
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <h5>Rodapé da modal</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exemplo-modal-static">
+        Abrir Modal Static
+    </button>
+    <div id="exemplo-modal-static" class="modal" data-bs-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content"> <!--Divide-se em cabeçalho corpo e rodapé-->
+                <div class="modal-header">
+                    <h5>Título da Modal</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        Essa modal não fecha ao clicar fora dela! Clique no X
+                        em cancelar ou confirmar! 
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-danger" type="button" data-bs-dismiss="modal">Cancelar</button>
+                    <button class="btn btn-success" type="button" data-bs-dismiss="modal">Confirmar</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container d-flex justify-content-center p-5">
+        <div class="row">
+            <div class="col">
+                <div>
+                    <button type="button" class="btn btn-warning ">
+                        <a style="text-decoration: none; color: #fff;" href="./index.html">Voltar ao Index</a>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+
+    <script src="./lib/bootstrap.bundle.min.js"></script>
+    <script> // Mostra a modal automaticamente depois que carrega toda a página
+        document.addEventListener('DOMContentLoaded', function() {
+            const modalExemplo = new bootstrap.Modal('#exemplo-modal')
+            
+            setTimeout(function() {
+                modalExemplo.show()
+            }, 1000)
+        })
+    </script>
+</body>
+</html>
